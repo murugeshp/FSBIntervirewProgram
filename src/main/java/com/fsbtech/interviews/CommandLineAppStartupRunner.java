@@ -9,9 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
-import java.util.List;
 
-@Component
 public class CommandLineAppStartupRunner implements CommandLineRunner {
 
     @Autowired
@@ -21,15 +19,15 @@ public class CommandLineAppStartupRunner implements CommandLineRunner {
 
     @Override
     public void run(String...args) throws Exception {
-        Event event1 = new Event(1,"First Event", null, List.of(new MarketRefType(1, "Example1")), true);
-        LOGGER.info("Add event is called");
-        clientService.addEvent(event1);
+        //Event event1 = new Event(1,"First Event", null, List.of(new MarketRefType(1, "Example1")), true);
+       // LOGGER.info("Add event is called");
+        //clientService.addEvent(event1);
         //clientService.attachMarketRefTypeToEvent(1,  new MarketRefType(2, "Example2") );
         /*clientService.eventCompleted(1);
         //clientService.updateMarketRefType(1, event1);
         clientService.attachMarketRefTypeToEvent(1, null);
         clientService.removeMarketRefTypeFromEvent(1, null);*/
-        clientService.futureEventNamesCollection("","","");
+        //clientService.futureEventNamesCollection("","","");
         //clientService.dumpFullStructure();
     }
 }

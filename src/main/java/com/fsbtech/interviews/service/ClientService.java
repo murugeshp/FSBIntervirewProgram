@@ -57,7 +57,7 @@ public class ClientService implements Client {
         Optional<Event> event = eventRepository.findById(id);
         marketRefType.setEvent(event.get());
         if(event.isPresent()){
-            event.get().getMarketRefTypes().removeIf(m -> marketRefType.getMarketRefId().equals(m.getMarketRefId()) && marketRefType.getMarketRefName().equals(m.getMarketRefName()));
+             event.get().getMarketRefTypes().removeIf(m -> marketRefType.getMarketRefId().equals(m.getMarketRefId()) && marketRefType.getMarketRefName().equals(m.getMarketRefName()));
             eventRepository.save(event.get());
         }
     }
@@ -69,5 +69,9 @@ public class ClientService implements Client {
 
     public String dumpFullStructure() {
         return eventRepository.findAll().toString();
+    }
+
+    public Optional<Event> getEvent(int id) {
+        return eventRepository.findById(id);
     }
 }

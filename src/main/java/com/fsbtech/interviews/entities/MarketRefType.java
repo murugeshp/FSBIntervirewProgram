@@ -1,5 +1,7 @@
 package com.fsbtech.interviews.entities;
 
+import com.fasterxml.jackson.annotation.JsonBackReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -21,6 +23,7 @@ public class MarketRefType implements Serializable
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "fk_event_id")
+    @JsonBackReference
     private Event event;
 
     public MarketRefType(){}

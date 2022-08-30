@@ -1,5 +1,7 @@
 package com.fsbtech.interviews.entities;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
+
 import javax.persistence.*;
 import java.io.Serializable;
 import java.util.ArrayList;
@@ -21,6 +23,7 @@ public class Event implements Serializable
     @OneToOne(cascade = CascadeType.ALL)
     private SubCategory subCategory;
 
+    @JsonManagedReference
     @OneToMany(mappedBy = "event", cascade = CascadeType.ALL, orphanRemoval = true)
     private Collection<MarketRefType> marketRefTypes;
 

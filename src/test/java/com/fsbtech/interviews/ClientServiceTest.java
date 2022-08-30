@@ -128,7 +128,7 @@ public class ClientServiceTest {
     @Test
     @Order(6)
     public void futureEventNamesCollectionTestForSubCategory(){
-        List<String> names = (List<String>) clientService.futureEventNamesCollection("","French Open","Home");
+        List<String> names = (List<String>) clientService.futureEventNamesCollection("","French Open","");
         assertEquals("Tennis Event", names.get(0));
     }
 
